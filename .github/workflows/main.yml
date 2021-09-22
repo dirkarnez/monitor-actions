@@ -1,15 +1,17 @@
+name: 🚀 Fetch Data
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '* * * * *'
-name: 🚀 Fetch Data
 jobs:
   fetch-data:
-    name: 🎉 Fetch
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: 📂 Fetch API
       uses: gautemo/fetch-api-data-action@1.0.2
       with:
         url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
-        file: 'backup/data.json'
+        file: 'testfile.json'
+    - name: list files
+      run: ls
