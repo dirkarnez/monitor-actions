@@ -17,7 +17,7 @@ jobs:
     - name: 📂 Fetch API
       uses: gautemo/fetch-api-data-action@1.0.2
       with:
-        url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
+        url: 'https://jsonplaceholder.typicode.com/todos/1'
         file: "${{ steps.current-time.outputs.time }}.json"
     - name: Commit File
       uses: EndBug/add-and-commit@v7
