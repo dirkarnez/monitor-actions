@@ -13,6 +13,7 @@ jobs:
       with:
         format: YYYYMMDD-HH
         utcOffset: "+08:00"
+    - uses: actions/checkout@v2
     - name: 📂 Fetch API
       uses: gautemo/fetch-api-data-action@1.0.2
       with:
