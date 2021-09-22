@@ -6,12 +6,16 @@ jobs:
   fetch-data:
     runs-on: ubuntu-latest
     steps:
-    - name: Set current date as env variable
-      run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+    - name: Get current time
+      uses: 1466587594/get-current-time@v2
+      id: current-time
+      with:
+        format: YYYYMMDD-HH
+        utcOffset: "+08:00"
     - name: 📂 Fetch API
       uses: gautemo/fetch-api-data-action@1.0.2
       with:
         url: 'https://fake-movie-database-api.herokuapp.com/api?s=batman'
-        file: ${{ NOW }}.json
+        file: "${{ steps.current-time.outputs.time }}.json"
     - name: Commit File
       uses: EndBug/add-and-commit@v7
