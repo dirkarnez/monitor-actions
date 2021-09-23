@@ -13,11 +13,17 @@ jobs:
       with:
         format: YYYYMMDD-HH
         utcOffset: "+08:00"
+        
     - uses: actions/checkout@v2
+    
     - name: 📂 Fetch API
       uses: gautemo/fetch-api-data-action@1.0.2
       with:
         url: 'https://jsonplaceholder.typicode.com/todos/1'
         file: "${{ steps.current-time.outputs.readableTime }}.json"
+        
+    - name: list files
+      run: cat "${{ steps.current-time.outputs.readableTime }}.json"
+      
     - name: Commit File
       uses: EndBug/add-and-commit@v7
