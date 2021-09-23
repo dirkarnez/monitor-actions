@@ -18,6 +18,6 @@ jobs:
       uses: gautemo/fetch-api-data-action@1.0.2
       with:
         url: 'https://jsonplaceholder.typicode.com/todos/1'
-        file: "${{ steps.current-time.outputs.time }}.json"
+        file: "${{ steps.current-time.outputs.readableTime }}.json"
     - name: Commit File
       uses: EndBug/add-and-commit@v7
