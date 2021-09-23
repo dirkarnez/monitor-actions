@@ -21,9 +21,6 @@ jobs:
       with:
         url: 'https://jsonplaceholder.typicode.com/todos/1'
         file: "${{ steps.current-time.outputs.readableTime }}.json"
-        
-    - name: list files
-      run: cat "${{ steps.current-time.outputs.readableTime }}.json"
       
     - name: Commit File
       uses: EndBug/add-and-commit@v7
