@@ -1,8 +1,9 @@
 name: 🚀 Fetch Data
-# on: push
+
 on:
   schedule:
     - cron:  '*/5 * * * *'
+    
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
